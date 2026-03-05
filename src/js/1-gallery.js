@@ -84,15 +84,10 @@ function itemsTemplate (arr) {
 document.addEventListener('DOMContentLoaded', () => {
   const markup = itemsTemplate(images);
   ulGallery.innerHTML = markup;
-    let gallery = new SimpleLightbox('.js-gallery a', {
+    let gallery = new SimpleLightbox('.gallery a', {
       navText: ['←','→'],
       loop: false,
-    });
-
-    gallery.on('open.simplelightbox', () => {
-      console.log('CLOSE MODAL');
-    });
-    gallery.on('close.simplelightbox', () => {
-      console.log('CLOSE MODAL');
+      captionsData: 'alt',
+        captionDelay: 250,
     });
 });
