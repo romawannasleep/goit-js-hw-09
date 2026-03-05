@@ -65,7 +65,7 @@
     description: 'Lighthouse Coast Sea',
   },
 ];
-const ulGallery = document.querySelector('.gallery');
+
 function itemTemplate (item) {
     return `<li class="gallery-item">
 	<a class="gallery-link" href="${item.original}">
@@ -82,6 +82,7 @@ function itemsTemplate (arr) {
     return arr.map(itemTemplate).join('');
 }
 document.addEventListener('DOMContentLoaded', () => {
+    const ulGallery = document.querySelector('.gallery');
   const markup = itemsTemplate(images);
   ulGallery.innerHTML = markup;
     let gallery = new SimpleLightbox('.gallery a', {
